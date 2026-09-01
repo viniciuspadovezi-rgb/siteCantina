@@ -1,29 +1,22 @@
 /* ==================================================
    RESET
 ================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
 
 * {
-
     box-sizing: border-box;
-
     margin: 0;
-
     padding: 0;
-
+    font-family: "Comfortaa", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
 }
 
 
 body {
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
     background: #e6c8ff;
-
     color: #1c121f;
-
 }
 
 
@@ -43,9 +36,9 @@ body {
 
     height: 100vh;
 
-    background: #1b1222;
+    background:#eddd03b9;
 
-    color: rgb(212, 178, 226);
+    color: rgb(255, 255, 255);
 
     padding: 20px;
 
@@ -78,7 +71,7 @@ body {
 
 .logo h1 {
 
-    font-size: 20px;
+    font-size: 1.5rem;
 
 }
 
@@ -86,7 +79,7 @@ body {
 .logo span {
 
     font-size: 12px;
-
+    color: #ED0833;
     opacity: 0.6;
 
 }
@@ -111,7 +104,7 @@ body {
 
     background: transparent;
 
-    color: #ae00ff;
+    color: #574c2a;
 
     padding: 13px;
 
@@ -123,34 +116,34 @@ body {
 
     font-size: 15px;
 
+    transition: 0.3s;
 }
 
 
 .menu-button:hover {
 
-    background: #462d4b;
+    background: #a52d2d;
 
-    color: rgb(234, 202, 255);
+    color: #ffffff;
 
 }
 
 
 .menu-button.active {
 
-    background: #8f2da5;
+    background: #a52d2d;
 
-    color: rgb(239, 203, 255);
+    color: rgb(255, 255, 255);
 
-}S
-
+}
 
 .sidebar-footer {
 
     margin-top: auto;
 
-    color: #8bc48b;
+    color: #ffffff;
 
-    font-size: 12px;
+    font-size: 1rem;
 
 }
 
