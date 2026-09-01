@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Cantina Escolar</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/caixa.css">
+    <link rel="stylesheet" href="css/produtos.css">
+    <link rel="stylesheet" href="css/estoque.css">
+    <link rel="stylesheet" href="css/relatorios.css">
+
+</head>
+
+<body>
+
+    <!-- ==================================================
+         MENU LATERAL
+    ================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                🍔
+            </div>
+
+            <div>
+                <h1>Cantina</h1>
+                <span>Escolar</span>
+            </div>
+
+        </div>
+
+        <nav>
+
+            <button
+                class="menu-button active"
+                data-screen="caixa"
+            >
+                🛒 Caixa
+            </button>
+
+            <button
+                class="menu-button"
+                data-screen="produtos"
+            >
+                📦 Produtos
+            </button>
+
+            <button
+                class="menu-button"
+                data-screen="estoque"
+            >
+                📊 Estoque
+            </button>
+
+            <button
+                class="menu-button"
+                data-screen="relatorios"
+            >
+                📈 Relatórios
+            </button>
+
+        </nav>
+
+        <div class="sidebar-footer">
+
+            <span>● Sistema offline</span>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ==================================================
+         CONTEÚDO PRINCIPAL
+    ================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- ==================================================
+             CAIXA
+        ================================================== -->
+
+        <section
+            id="screen-caixa"
+            class="screen active"
+        >
+
+            <div class="page-header">
+
+                <div>
+
+                    <h2>Caixa</h2>
+
+                    <p>
+                        Registre uma nova venda
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="caixa-container">
+
+
+                <!-- ==========================
+                     ÁREA DE PRODUTOS
+                ========================== -->
+
+                <div class="caixa-products">
+
+
+                    <div class="codigo-area">
+
+                        <label for="codigoProduto">
+                            Código do produto
+                        </label>
+
+                        <div class="codigo-input">
+
+                            <input
+                                type="text"
+                                id="codigoProduto"
+                                placeholder="Digite o código..."
+                                autocomplete="off"
+                            >
+
+                            <button
+                                id="btnAdicionarCodigo"
+                                class="primary-button"
+                            >
+                                Adicionar
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="produto-rapido">
+
+                        <span>
+                            Digite o código e pressione
+                            <strong>Enter</strong>
+                        </span>
+
+                    </div>
+
+
+                    <!-- CARRINHO -->
+
+                    <div class="carrinho-header">
+
+                        <h3>
+                            Carrinho
+                        </h3>
+
+                        <span id="quantidadeItensCarrinho">
+                            0 itens
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        id="carrinho"
+                        class="carrinho"
+                    >
+
+                        <div
+                            id="carrinhoVazio"
+                            class="carrinho-vazio"
+                        >
+
+                            <div>
+                                🛒
+                            </div>
+
+                            <h3>
+                                Carrinho vazio
+                            </h3>
+
+                            <p>
+                                Digite o código de um produto
+                                para começar.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ==========================
+                     RESUMO DA VENDA
+                ========================== -->
+
+                <div class="caixa-resumo">
+
+                    <h3>
+                        Resumo da venda
+                    </h3>
+
+
+                    <div class="resumo-linha">
+
+                        <span>
+                            Itens
+                        </span>
+
+                        <strong id="resumoQuantidade">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="resumo-linha total">
+
+                        <span>
+                            Total
+                        </span>
+
+                        <strong id="resumoTotal">
+                            R$ 0,00
+                        </strong>
+
+                    </div>
+
+
+                    <div class="pagamento-area">
+
+                        <h4>
+                            Forma de pagamento
+                        </h4>
+
+
+                        <div class="pagamentos">
+
+                            <button
+                                class="pagamento-button"
+                                data-pagamento="dinheiro"
+                            >
+                                💵
+                                <span>Dinheiro</span>
+                            </button>
+
+                            <button
+                                class="pagamento-button"
+                                data-pagamento="pix"
+                            >
+                                📱
+                                <span>PIX</span>
+                            </button>
+
+                            <button
+                                class="pagamento-button"
+                                data-pagamento="cartao"
+                            >
+                                💳
+                                <span>Cartão</span>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        id="btnFinalizarVenda"
+                        class="finalizar-button"
+                        disabled
+                    >
+                        Finalizar venda
+                    </button>
+
+
+                    <button
+                        id="btnCancelarVenda"
+                        class="cancelar-button"
+                    >
+                        Cancelar venda
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             PRODUTOS
+        ================================================== -->
+
+        <section
+            id="screen-produtos"
+            class="screen"
+        >
+
+            <div class="page-header">
+
+                <div>
+
+                    <h2>Produtos</h2>
+
+                    <p>
+                        Cadastre e gerencie os produtos
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="produtos-container">
+
+                <div class="produto-form-card">
+
+                    <h3>
+                        Cadastrar produto
+                    </h3>
+
+                    <form id="produtoForm">
+
+                        <div class="form-group">
+
+                            <label>
+                                Nome
+                            </label>
+
+                            <input
+                                type="text"
+                                id="produtoNome"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label>
+                                    Código
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="produtoCodigo"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Validade
+                                </label>
+
+                                <input
+                                    type="date"
+                                    id="produtoValidade"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label>
+                                    Preço de custo
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="produtoCusto"
+                                    min="0"
+                                    step="0.01"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Lucro (%)
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="produtoLucro"
+                                    min="0"
+                                    step="0.01"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Quantidade
+                            </label>
+
+                            <input
+                                type="number"
+                                id="produtoQuantidade"
+                                min="0"
+                                step="1"
+                                required
+                            >
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="primary-button"
+                        >
+                            Cadastrar produto
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+                <div class="produto-list-card">
+
+                    <h3>
+                        Produtos cadastrados
+                    </h3>
+
+                    <div id="listaProdutos">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             ESTOQUE
+        ================================================== -->
+
+        <section
+            id="screen-estoque"
+            class="screen"
+        >
+
+            <div class="page-header">
+
+                <div>
+
+                    <h2>Estoque</h2>
+
+                    <p>
+                        Controle de produtos e quantidades
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="estoque-resumo">
+
+                <div class="estoque-card">
+
+                    <span>
+                        Produtos
+                    </span>
+
+                    <strong id="totalProdutos">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="estoque-card">
+
+                    <span>
+                        Unidades
+                    </span>
+
+                    <strong id="totalUnidades">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="estoque-card alerta">
+
+                    <span>
+                        Estoque baixo
+                    </span>
+
+                    <strong id="estoqueBaixo">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="estoque-card vencimento">
+
+                    <span>
+                        Validade próxima
+                    </span>
+
+                    <strong id="validadeProxima">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="estoque-controles">
+
+                <input
+                    type="text"
+                    id="buscaEstoque"
+                    placeholder="Buscar produto..."
+                >
+
+                <select id="filtroEstoque">
+
+                    <option value="todos">
+                        Todos
+                    </option>
+
+                    <option value="baixo">
+                        Estoque baixo
+                    </option>
+
+                    <option value="vencendo">
+                        Validade próxima
+                    </option>
+
+                    <option value="vencido">
+                        Vencidos
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div id="listaEstoque">
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             RELATÓRIOS
+        ================================================== -->
+
+        <section
+            id="screen-relatorios"
+            class="screen"
+        >
+
+            <div class="page-header">
+
+                <div>
+
+                    <h2>Relatórios</h2>
+
+                    <p>
+                        Acompanhe as vendas da cantina
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="relatorios-resumo">
+
+                <div class="relatorio-card">
+
+                    <span>
+                        Vendas
+                    </span>
+
+                    <strong id="relatorioVendas">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="relatorio-card">
+
+                    <span>
+                        Faturamento
+                    </span>
+
+                    <strong id="relatorioFaturamento">
+                        R$ 0,00
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div id="listaRelatorios">
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==================================================
+         SCRIPTS
+    ================================================== -->
+
+    <script src="js/database.js"></script>
+
+    <script src="js/caixa.js"></script>
+
+    <script src="js/produtos.js"></script>
+
+    <script src="js/estoque.js"></script>
+
+    <script src="js/vendas.js"></script>
+
+    <script src="js/relatorios.js"></script>
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

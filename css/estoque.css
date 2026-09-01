@@ -1,0 +1,913 @@
+/* ==========================================
+   ESTOQUE
+========================================== */
+
+
+/* ==========================================
+   RESUMO
+========================================== */
+
+.estoque-resumo {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.estoque-resumo-card {
+
+    background:
+        var(--surface);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 10px;
+
+    padding: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+}
+
+
+.estoque-resumo-card > span {
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        var(--hover);
+
+    border-radius: 9px;
+
+    font-size: 19px;
+
+}
+
+
+.estoque-resumo-card strong {
+
+    display: block;
+
+    font-size: 17px;
+
+    margin-bottom: 3px;
+
+}
+
+
+.estoque-resumo-card small {
+
+    color:
+        var(--text-secondary);
+
+    font-size: 10px;
+
+}
+
+
+/* ==========================================
+   ALERTAS
+========================================== */
+
+.estoque-alertas {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.estoque-alerta {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding:
+        9px 12px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 7px;
+
+    background:
+        #ffffff;
+
+    font-size: 11px;
+
+}
+
+
+.estoque-alerta strong {
+
+    font-size: 12px;
+
+}
+
+
+.estoque-alerta span {
+
+    color:
+        var(--text-secondary);
+
+}
+
+
+/* ==========================================
+   CONTROLES
+========================================== */
+
+.estoque-controles {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 190px auto;
+
+    gap: 10px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.estoque-busca input {
+
+    width: 100%;
+
+    height: 42px;
+
+    padding:
+        0 13px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 7px;
+
+    outline: none;
+
+    font-size: 12px;
+
+}
+
+
+.estoque-busca input:focus {
+
+    border-color:
+        #555;
+
+}
+
+
+.filtro-estoque {
+
+    height: 42px;
+
+    padding:
+        0 10px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 7px;
+
+    background:
+        #ffffff;
+
+    font-size: 11px;
+
+    outline: none;
+
+}
+
+
+.btn-atualizar {
+
+    height: 42px;
+
+    padding:
+        0 14px;
+
+    border:
+        1px solid var(--border);
+
+    background:
+        #ffffff;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+}
+
+
+.btn-atualizar:hover {
+
+    background:
+        var(--hover);
+
+}
+
+
+/* ==========================================
+   CAIXA PRINCIPAL
+========================================== */
+
+.estoque-box {
+
+    background:
+        var(--surface);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 11px;
+
+    padding: 22px;
+
+}
+
+
+.estoque-box-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+
+}
+
+
+.estoque-box-header h2 {
+
+    font-size: 18px;
+
+}
+
+
+/* ==========================================
+   LISTA
+========================================== */
+
+.lista-estoque {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+
+}
+
+
+.estoque-item {
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 8px;
+
+    padding:
+        14px 15px;
+
+}
+
+
+.estoque-item-top {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(180px, 1.5fr)
+        100px
+        120px
+        140px
+        auto;
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+
+.estoque-produto-nome {
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    margin-bottom: 4px;
+
+}
+
+
+.estoque-produto-codigo {
+
+    color:
+        var(--text-secondary);
+
+    font-size: 9px;
+
+}
+
+
+.estoque-coluna {
+
+    font-size: 11px;
+
+}
+
+
+.estoque-coluna span {
+
+    display: block;
+
+    color:
+        var(--text-light);
+
+    font-size: 8px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 3px;
+
+    letter-spacing: 0.4px;
+
+}
+
+
+.estoque-coluna strong {
+
+    font-size: 12px;
+
+}
+
+
+/* ==========================================
+   QUANTIDADE
+========================================== */
+
+.estoque-quantidade {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+}
+
+
+.estoque-quantidade-numero {
+
+    min-width: 28px;
+
+    font-weight: bold;
+
+}
+
+
+.estoque-status {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding:
+        4px 7px;
+
+    border-radius: 5px;
+
+    font-size: 8px;
+
+    font-weight: bold;
+
+}
+
+
+.estoque-status.normal {
+
+    background:
+        #f1f1f1;
+
+    color:
+        #333333;
+
+}
+
+
+.estoque-status.baixo {
+
+    background:
+        #eeeeee;
+
+    color:
+        #555555;
+
+}
+
+
+.estoque-status.zerado {
+
+    background:
+        #e4e4e4;
+
+    color:
+        #222222;
+
+}
+
+
+/* ==========================================
+   VALIDADE
+========================================== */
+
+.validade-normal {
+
+    color:
+        var(--text);
+
+}
+
+
+.validade-proxima {
+
+    color:
+        #555;
+
+    font-weight: bold;
+
+}
+
+
+.validade-vencida {
+
+    color:
+        #111;
+
+    font-weight: bold;
+
+}
+
+
+/* ==========================================
+   AÇÕES
+========================================== */
+
+.estoque-acoes {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 6px;
+
+}
+
+
+.estoque-acoes button {
+
+    height: 31px;
+
+    padding:
+        0 9px;
+
+    border:
+        1px solid var(--border);
+
+    background:
+        #ffffff;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    font-size: 10px;
+
+}
+
+
+.estoque-acoes button:hover {
+
+    background:
+        var(--hover);
+
+}
+
+
+/* ==========================================
+   INFORMAÇÕES EXTRAS
+========================================== */
+
+.estoque-item-bottom {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-top: 12px;
+
+    padding-top: 11px;
+
+    border-top:
+        1px solid var(--border);
+
+}
+
+
+.estoque-info-tag {
+
+    padding:
+        4px 7px;
+
+    background:
+        var(--hover);
+
+    border-radius: 5px;
+
+    color:
+        var(--text-secondary);
+
+    font-size: 8px;
+
+}
+
+
+/* ==========================================
+   LISTA VAZIA
+========================================== */
+
+.estoque-lista-vazia {
+
+    min-height: 250px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color:
+        var(--text-secondary);
+
+}
+
+
+.estoque-lista-vazia span {
+
+    width: 55px;
+
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        var(--hover);
+
+    border-radius: 12px;
+
+    font-size: 23px;
+
+    margin-bottom: 14px;
+
+}
+
+
+.estoque-lista-vazia h3 {
+
+    color:
+        var(--text);
+
+    font-size: 14px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.estoque-lista-vazia p {
+
+    font-size: 10px;
+
+}
+
+
+/* ==========================================
+   MODAL
+========================================== */
+
+.modal-estoque {
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(0, 0, 0, 0.35);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 1000;
+
+    padding: 20px;
+
+}
+
+
+.modal-estoque.hidden {
+
+    display: none;
+
+}
+
+
+.modal-estoque-conteudo {
+
+    width: 100%;
+
+    max-width: 430px;
+
+    background:
+        #ffffff;
+
+    border-radius: 12px;
+
+    padding: 24px;
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.18);
+
+}
+
+
+.modal-estoque-header {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+
+}
+
+
+.modal-estoque-header h2 {
+
+    font-size: 18px;
+
+}
+
+
+.modal-fechar {
+
+    width: 31px;
+
+    height: 31px;
+
+    border:
+        1px solid var(--border);
+
+    background:
+        #ffffff;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+}
+
+
+.modal-fechar:hover {
+
+    background:
+        var(--hover);
+
+}
+
+
+/* ==========================================
+   PRODUTO NO MODAL
+========================================== */
+
+.modal-produto-info {
+
+    background:
+        var(--hover);
+
+    border-radius: 8px;
+
+    padding: 13px;
+
+    margin-bottom: 17px;
+
+}
+
+
+.modal-produto-info strong {
+
+    display: block;
+
+    font-size: 13px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.modal-produto-info small {
+
+    color:
+        var(--text-secondary);
+
+    font-size: 10px;
+
+}
+
+
+/* ==========================================
+   TIPOS DE MOVIMENTAÇÃO
+========================================== */
+
+.movimentacao-tipos {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 8px;
+
+    margin-bottom: 18px;
+
+}
+
+
+.movimentacao-tipo {
+
+    height: 40px;
+
+    border:
+        1px solid var(--border);
+
+    background:
+        #dad5d5;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+}
+
+
+.movimentacao-tipo:hover {
+
+    background:
+        var(--hover);
+
+}
+
+
+.movimentacao-tipo.ativo {
+
+    background:
+        #acaaaa;
+
+    border-color:
+        #999;
+
+}
+
+
+/* ==========================================
+   BOTÕES DO MODAL
+========================================== */
+
+.modal-estoque-botoes {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 8px;
+
+    margin-top: 20px;
+
+}
+
+
+/* ==========================================
+   RESPONSIVIDADE
+========================================== */
+
+@media (max-width: 1100px) {
+
+    .estoque-resumo {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .estoque-item-top {
+
+        grid-template-columns:
+            1fr 100px 120px;
+
+    }
+
+
+    .estoque-acoes {
+
+        justify-content: flex-start;
+
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .estoque-resumo {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .estoque-controles {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .estoque-item-top {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 10px;
+
+    }
+
+}

@@ -1,0 +1,676 @@
+/* ==========================================
+   PRODUTOS
+========================================== */
+
+
+/* ==========================================
+   LAYOUT
+========================================== */
+
+.produto-layout {
+
+    display: grid;
+
+    grid-template-columns:
+        420px 1fr;
+
+    gap: 22px;
+
+    align-items: start;
+
+}
+
+
+/* ==========================================
+   CAIXAS
+========================================== */
+
+.produto-form-box,
+.produto-lista-box {
+
+    background:
+        var(--surface);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 12px;
+
+    padding: 24px;
+
+}
+
+
+/* ==========================================
+   CABEÇALHO DO FORMULÁRIO
+========================================== */
+
+.form-header {
+
+    margin-bottom: 24px;
+
+}
+
+
+.form-tag {
+
+    display: block;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    color:
+        var(--text-light);
+
+    margin-bottom: 6px;
+
+}
+
+
+.form-header h2,
+.lista-header h2 {
+
+    font-size: 18px;
+
+}
+
+
+/* ==========================================
+   FORMULÁRIO
+========================================== */
+
+.form-group {
+
+    margin-bottom: 17px;
+
+}
+
+
+.form-group label {
+
+    display: block;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    margin-bottom: 7px;
+
+}
+
+
+.form-group input,
+.form-group select {
+
+    width: 100%;
+
+    height: 42px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 7px;
+
+    padding:
+        0 12px;
+
+    background:
+        #ffffff;
+
+    color:
+        var(--text);
+
+    font-size: 13px;
+
+    outline: none;
+
+    transition:
+        border 0.15s;
+
+}
+
+
+.form-group input:focus,
+.form-group select:focus {
+
+    border-color:
+        #555;
+
+}
+
+
+.form-group small {
+
+    display: block;
+
+    margin-top: 5px;
+
+    color:
+        var(--text-light);
+
+    font-size: 10px;
+
+}
+
+
+/* ==========================================
+   LINHA DUPLA
+========================================== */
+
+.form-row {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 12px;
+
+}
+
+
+/* ==========================================
+   PREÇO CALCULADO
+========================================== */
+
+.preco-calculado {
+
+    background:
+        #f6f7f8;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 8px;
+
+    padding:
+        13px 15px;
+
+    margin-bottom: 17px;
+
+}
+
+
+.preco-calculado > div {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+.preco-calculado span {
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    color:
+        var(--text-secondary);
+
+    letter-spacing: 0.5px;
+
+}
+
+
+.preco-calculado strong {
+
+    font-size: 17px;
+
+}
+
+
+.preco-calculado small {
+
+    display: block;
+
+    margin-top: 5px;
+
+    color:
+        var(--text-light);
+
+    font-size: 10px;
+
+}
+
+
+/* ==========================================
+   BOTÕES DO FORMULÁRIO
+========================================== */
+
+.form-buttons {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 8px;
+
+    margin-top: 22px;
+
+}
+
+
+.btn-primary,
+.btn-secondary {
+
+    height: 40px;
+
+    padding:
+        0 16px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+}
+
+
+.btn-primary {
+
+    background:
+        var(--primary);
+
+    color:
+        #ffffff;
+
+    border:
+        1px solid var(--primary);
+
+}
+
+
+.btn-primary:hover {
+
+    opacity: 0.9;
+
+}
+
+
+.btn-secondary {
+
+    background:
+        #ffffff;
+
+    color:
+        var(--text);
+
+    border:
+        1px solid var(--border);
+
+}
+
+
+.btn-secondary:hover {
+
+    background:
+        var(--hover);
+
+}
+
+
+.hidden {
+
+    display: none !important;
+
+}
+
+
+/* ==========================================
+   CABEÇALHO DA LISTA
+========================================== */
+
+.lista-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+
+}
+
+
+.contador-produtos {
+
+    min-width: 30px;
+
+    height: 30px;
+
+    padding:
+        0 9px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        var(--hover);
+
+    border-radius: 7px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+}
+
+
+/* ==========================================
+   BUSCA
+========================================== */
+
+.busca-produtos {
+
+    margin-bottom: 15px;
+
+}
+
+
+.busca-produtos input {
+
+    width: 100%;
+
+    height: 42px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 7px;
+
+    padding:
+        0 13px;
+
+    outline: none;
+
+    font-size: 12px;
+
+}
+
+
+.busca-produtos input:focus {
+
+    border-color:
+        #555;
+
+}
+
+
+/* ==========================================
+   LISTA
+========================================== */
+
+.lista-produtos {
+
+    max-height: 570px;
+
+    overflow-y: auto;
+
+}
+
+
+.produto-item {
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 9px;
+
+    padding:
+        14px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.produto-item-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+}
+
+
+.produto-info {
+
+    min-width: 0;
+
+}
+
+
+.produto-nome {
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-bottom: 5px;
+
+}
+
+
+.produto-codigo {
+
+    color:
+        var(--text-secondary);
+
+    font-size: 10px;
+
+}
+
+
+.produto-preco {
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    white-space: nowrap;
+
+}
+
+
+.produto-detalhes {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 12px;
+
+}
+
+
+.produto-detalhe {
+
+    padding:
+        5px 8px;
+
+    border-radius: 5px;
+
+    background:
+        var(--hover);
+
+    color:
+        var(--text-secondary);
+
+    font-size: 9px;
+
+}
+
+
+.produto-acoes {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 6px;
+
+    margin-top: 12px;
+
+}
+
+
+.produto-acoes button {
+
+    height: 29px;
+
+    padding:
+        0 9px;
+
+    border:
+        1px solid var(--border);
+
+    background:
+        #ffffff;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    font-size: 10px;
+
+}
+
+
+.produto-acoes button:hover {
+
+    background:
+        var(--hover);
+
+}
+
+
+.produto-acoes .btn-excluir:hover {
+
+    color:
+        var(--danger);
+
+}
+
+
+/* ==========================================
+   LISTA VAZIA
+========================================== */
+
+.lista-vazia {
+
+    min-height: 280px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color:
+        var(--text-secondary);
+
+}
+
+
+.lista-vazia > span {
+
+    width: 55px;
+
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        var(--hover);
+
+    border-radius: 12px;
+
+    font-size: 23px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.lista-vazia h3 {
+
+    color:
+        var(--text);
+
+    font-size: 14px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.lista-vazia p {
+
+    font-size: 11px;
+
+}
+
+
+/* ==========================================
+   RESPONSIVIDADE
+========================================== */
+
+@media (max-width: 1050px) {
+
+    .produto-layout {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .lista-produtos {
+
+        max-height: none;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .form-row {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 0;
+
+    }
+
+}
